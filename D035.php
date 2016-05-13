@@ -1,7 +1,9 @@
 <?php
-$year = trim(fgets(STDIN));
-$month = trim(fgets(STDIN));
-$day = trim(fgets(STDIN));
+$input = trim(fgets(STDIN));
+$val=explode(" ",$input);
+$y=$val[0];
+$m=$val[1];
+$d=$val[2];
 
-echo $year.'/'.$month.'/'.$day;
+echo "$y/$m/$d";
  ?>

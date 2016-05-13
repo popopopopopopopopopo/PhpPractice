@@ -1,5 +1,5 @@
 <?php
-$count=0;
+$count=1;
 $myarray = array();
 for ($i=0; $i < 7; $i++) {
     $weather = trim(fgets(STDIN));
@@ -7,7 +7,6 @@ for ($i=0; $i < 7; $i++) {
     if ($weather>30){
         $count++;
     }
-    else{}
 }
 echo $count;
 ?>

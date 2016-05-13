@@ -1,6 +1,14 @@
 <?php
-    $input_lines1 = fgets(STDIN);
-        $input_lines2 = fgets(STDIN);
-        $a = $input_lines2 / $input_lines1;
-    echo $a;
+    $m= fgets(STDIN);
+    $n= fgets(STDIN);
+
+    $w = $n/$m;
+    $a = $n%$m;
+        if ($a===0){
+    echo $w;
+        }
+        else{
+    echo round($w)+1;
+        }
+
 ?>

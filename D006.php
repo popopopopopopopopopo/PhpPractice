@@ -1,15 +1,20 @@
 <?php
     $input_lines = trim(fgets(STDIN));
-    $input_liness = trim(fgets(STDIN));
-    if($input_liness='km'){
-        $ans=$input_lines * 1000*100*10;
+    $val=explode(' ',$input_lines);
+    $mm=$val[0];
+    $tani=$val[1];
+
+    if($tani==='km'){
+        $ans=$mm*1000*100*10;
     }
-    elseif($input_liness='m'){
-        $ans=$input_lines*100*10;
+    elseif($tani==='m'){
+        $ans=$mm*100*10;
     }
-    elseif($input_liness='cm'){
-        $ans=$input_lines*10;
+    elseif($tani==='cm'){
+        $ans=$mm*10;
     }
-else;
+    else{
+        $ans=$mm;
+    }
     echo $ans;
 ?>

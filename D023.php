@@ -1,4 +1,4 @@
 <?php
-$moji = fgets(STDIN);
-echo substr_count($moji, 'A');
+$moji = trim(fgets(STDIN));
+echo array_search("A",$moji);
  ?>

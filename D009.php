@@ -1,6 +1,7 @@
 <?php
-    $input_lines1 = fgets(STDIN);
-    $input_lines2 = fgets(STDIN);
-    $ans= $input_lines2 - $input_lines1;
-    echo $ans;
+    $input_lines = fgets(STDIN);
+    $val=explode(' ',$input_lines);
+    $a=$val[0];
+    $b=$val[1];
+    echo $b-$a;
 ?>
