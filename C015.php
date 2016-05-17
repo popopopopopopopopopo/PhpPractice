@@ -1,20 +1,19 @@
 <?php
+$receipt=trim(fgets(STDIN));      //隠れシートの数
+$ans=0;
+for($i=0;$i<$receipt;$i++){
+    $dp=explode(" ",fgets(STDIN));     //日付と金額
+    $day=$dp[0];
+    $price=$dp[1];
 
-    $n=trim(fgets(STDIN));      //隠れシートの数
-
-    for($i=0;$i<$n;$i++){
-        $dp[$i]=trim(fgets(STDIN),"\r");     //日付と金額
-        echo $dp[$i];
-    $var=explode(" ",$dp[$i]);
-    $d=$var[0];
-    $p=$var[1];
-}
-    if($d=3){
-        echo $ans=floor($p*0.03);
+    if(strstr($day,'3')){
+         $ans+=floor($price*0.03);
     }
-    elseif($d=5){
-        echo $ans=floor($p*0.05);
+    elseif(strstr($day,'5')){
+         $ans+=floor($price*0.05);
     }
     else{
-        echo $ans=floor($p*0.01);
+         $ans+=floor($price*0.01);
     }
+}
+echo $ans;
