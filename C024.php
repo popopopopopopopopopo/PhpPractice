@@ -1,34 +1,34 @@
 <?php
+$times=trim(fgets(STDIN));              //回数
+$val1=0;
+$val2=0;
+for($i=0;$i<$times;$i++){
+    $oder=explode(' ',(fgets(STDIN)));
+    $hen_oder=$oder[0];                         //命令
 
-    $n=trim(fgets(STDIN));      //回数
-    $val1=0;
-    $val2=0;
-    for($i=0;$i<$n;$i++){
-        $oder=explode(' ',(fgets(STDIN)));
-        $hen=$oder[0];
-
-if(preg_match("/SET/",$hen)){
-    if($oder[1]==1){
-        $val1=$oder[2];
+    if(preg_match('/SET/',$hen_oder)){
+        if($hen_oder[1]===1){
+            $val1=$oder[2];
+        }
+        else{
+            $val2=$oder[2];
+        }
+}
+    elseif(preg_match('/ADD/',$hen_oder)){
+        $val2=add($val1,$hen_oder[1]);
     }
     else{
-        $val2=$oder[2];
+        $val2=sub($val1,$hen_oder[1]);
     }
-}
-elseif(preg_match("/ADD/",$hen)){
-    $val2=add ($val1,$hen[1]);
-}
-else{
-    $val2=sub ($val1,$hen[1]);
-}
 }
 echo $val1." ".$val2;
 
-function add ($val,$int){
+
+function add($val,$int){
     $val2=$val + $int;
     return $val2;
 }
-function sub ($val,$int){
-    $val2=$val - $int;
+function sub($val,$int){
+    $val2=$val-$int;
     return $val2;
 }

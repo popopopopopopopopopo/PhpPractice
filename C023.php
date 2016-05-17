@@ -1,21 +1,18 @@
 <?php
-$input=trim(fgets(STDIN));
-$val=explode(" ",$input);
-$a=$val[0];
-$b=$val[1];
-$c=$val[2];
-$d=$val[3];
-$e=$val[4];
-$f=$val[5];
+$win_no = explode(" ",(fgets(STDIN)));          //当選番号
+$sheets = trim(fgets(STDIN));
+$match_count = 0;
 
+for ($i = 0; $i < $sheets; $i++) {
+	$buy_no = explode(" ",(fgets(STDIN)));
 
-//木陰の数
-$N=trim(fgets(STDIN));
-for ($i=0; $i <$N ; $i++) {
-    $n=trim(fgets(STDIN));
-    $valval=explode(" ",$n[$i]);
-if()
+	foreach ($win_no as $win_num) {
+		foreach ($buy_no as $buy_num) {
+			if ($win_num === $buy_num) {
+				$match_count++;
+				break;
+			}
+		}
+	}
+	echo $match_count . "\n";
 }
-
-
- ?>
