@@ -1,18 +1,18 @@
 <?php
-$win_no = explode(" ",(fgets(STDIN)));          //当選番号
-$sheets = trim(fgets(STDIN));
-$match_count = 0;
 
-for ($i = 0; $i < $sheets; $i++) {
-	$buy_no = explode(" ",(fgets(STDIN)));
+$win_no = explode(" ",trim(fgets(STDIN)));          //当選番号
+$tickets = trim(fgets(STDIN));					//購入したくじの枚数
 
-	foreach ($win_no as $win_num) {
-		foreach ($buy_no as $buy_num) {
-			if ($win_num === $buy_num) {
-				$match_count++;
-				break;
+for ($i = 0; $i < $tickets; $i++) {
+    $count[$i] = 0;
+	$buy_no = explode(" ",trim(fgets(STDIN)));		//購入したくじの番号
+
+	for ($j=0; $j < 6; $j++) {
+		for ($k=0; $k < 6; $k++) {
+			if($win_no[$k] === $buy_no[$j]){
+				$count[$i] ++;
 			}
 		}
 	}
-	echo $match_count . "\n";
+	echo $count[$i] . "\n";
 }
