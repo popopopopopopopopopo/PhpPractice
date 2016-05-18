@@ -1,22 +1,22 @@
 <?php
-$input= trim(fgets(STDIN));
-for ( $i = 0; $i < $input; $i++) {
-        $ip[$i] = trim(fgets(STDIN));
-        $ok = 0;
-        $suti = explode(".",$ip[$i]);
-        if(count($suti) == 4){
-                for($j=0;$j<4;$j++){
-                        if(is_numeric($suti[$j])){
-                            if($suti[$j]>=0 && $suti[$j]<=255){
-                                $ok = 1;
-                            }
-                        }
+$ad_no = trim(fgets(STDIN));
+for($i=0;$i<$ad_no;$i++){
+    $count=0;
+    $address =explode(".",trim(fgets(STDIN)));
+    if(count($address) == 4){
+        for($j=0;$j<4;$j++){
+            if(is_numeric($address[$j])){
+                if($address[$j]>=0 && $address[$j]<=255){
+                    $count=1;
                 }
+            }
         }
-        if($ok == 1){
-                echo "True\n";
-        }else{
-                echo "False\n";
-        }
+    }
+    if($count ==1){
+        echo "True\n";
+    }
+    else{
+        echo "False\n";
+    }
 }
 ?>
